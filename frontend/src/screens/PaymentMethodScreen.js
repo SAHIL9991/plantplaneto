@@ -37,7 +37,19 @@ export default function PaymentMethodScreen(props) {
             <label htmlFor="Paytm">Paytm</label>
           </div>
         </div>
-        
+        <div>
+          <div>
+            <input
+              type="radio"
+              id="Paypal"
+              value="Paypal"
+              name="paymentMethod"
+              required
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            ></input>
+            <label htmlFor="Paypal">Paypal</label>
+          </div>
+        </div>
         <div>
           <div>
             <input

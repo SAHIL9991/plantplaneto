@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import MessageBox from '../components/MessageBox';
 
+
+
 export default function CartScreen(props) {
+
   const productId = props.match.params.id;
   const qty = props.location.search
     ? Number(props.location.search.split('=')[1])
@@ -28,6 +31,7 @@ export default function CartScreen(props) {
   };
   return (
     <div className="row top">
+      
       <div className="col-2">
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (

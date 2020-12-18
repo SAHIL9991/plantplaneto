@@ -5,6 +5,8 @@ import { detailsProduct } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
+import Arbtn from '../components/Arbtn';
+
 
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
@@ -97,10 +99,7 @@ export default function ProductScreen(props) {
                         </div>
                       </li>
                       <li>
-                        <button
-                          onClick={addToCartHandler}
-                          className="primary block"
-                        >
+                        <button onClick={addToCartHandler} className="primary block">
                           Add to Cart
                         </button>
                       </li>
@@ -110,6 +109,7 @@ export default function ProductScreen(props) {
               </div>
             </div>
           </div>
+          <Arbtn></Arbtn>
         </div>
       )}
     </div>
