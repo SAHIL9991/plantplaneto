@@ -7,7 +7,7 @@ import MessageBox from '../components/MessageBox';
 
 
 export default function CartScreen(props) {
-
+  
   const productId = props.match.params.id;
   const qty = props.location.search
     ? Number(props.location.search.split('=')[1])
@@ -15,6 +15,22 @@ export default function CartScreen(props) {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
+  const rmv1 = document.getElementById("ARButton");
+  
+  // const rmv3 = document.getElementsByClassName("remv3");
+  if(rmv1 !== null)
+  {
+    rmv1.remove();
+    window.location.reload();
+    const rmv2 = document.getElementsByTagName("canvas");
+    for (var index = 0; index < rmv2.length; index++) {
+      rmv2[index].parentNode.removeChild(rmv2[index]);
+    }
+    // rmv3.classList.remove();
+  }
+  
+  
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));

@@ -15,6 +15,16 @@ export default function ProductScreen(props) {
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
 
+  
+  const rmv1 = document.getElementsByTagName("canvas");
+  if(rmv1 !== null){
+    // rmv1.remove();
+    for (var index = 0; index < rmv1.length; index++) {
+      rmv1[index].parentNode.removeChild(rmv1[index]);
+    }
+  }
+    
+
   useEffect(() => {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
@@ -99,7 +109,7 @@ export default function ProductScreen(props) {
                         </div>
                       </li>
                       <li>
-                        <button onClick={addToCartHandler} className="primary block">
+                        <button onClick={addToCartHandler} className="primary block" type="submit">
                           Add to Cart
                         </button>
                       </li>
@@ -109,7 +119,7 @@ export default function ProductScreen(props) {
               </div>
             </div>
           </div>
-          <Arbtn></Arbtn>
+          {<Arbtn></Arbtn>}
         </div>
       )}
     </div>

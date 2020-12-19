@@ -24,7 +24,7 @@ var ARButton = {
 
 			}
 			function refreshPage() {
-				window.location.reload(false);
+				window.location.reload();
 			  }
 
 			function onSessionEnded() {

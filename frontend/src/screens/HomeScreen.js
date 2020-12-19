@@ -11,6 +11,17 @@ export default function HomeScreen() {
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
 
+
+  const rmv1 = document.getElementById("ARButton");
+  if(rmv1 !== null)
+  {
+    const rmv2 = document.getElementsByTagName("canvas");
+    rmv1.remove();
+    for (var index = 0; index < rmv2.length; index++) {
+      rmv2[index].parentNode.removeChild(rmv2[index]);
+    }
+  }
+
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);

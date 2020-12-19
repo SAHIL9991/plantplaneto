@@ -95,10 +95,13 @@ renderer.render( scene, camera );
 function init() {
 
 container = document.createElement( 'div' );
+
 document.body.appendChild( container );
+
+container.classList.add("remv3")
 container.style.position='none';
-container.style.height='20px';
-container.style.width='20px';
+container.style.height='0px';
+container.style.width='0px';
 container.style.float='right';
 
 container.style.backgroundColor='none';
@@ -114,7 +117,7 @@ scene.add( light );
 
 renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 renderer.setPixelRatio( window.devicePixelRatio );
-renderer.setSize(window.innerWidth,window.innerHeight*0);
+renderer.setSize(window.innerWidth,window.innerHeight);
 renderer.xr.enabled = true;
 container.appendChild( renderer.domElement );
 
